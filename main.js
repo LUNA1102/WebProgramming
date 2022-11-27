@@ -62,5 +62,10 @@ form.addEventListener("submit", function (e) {
         // 할 일 완료하면 줄 긋기
         // toggle() -> ON/OFF
         });
+
+        task_delete_el.addEventListener("click", function () {
+            list_el.removeChild(task_el);
+            // removeChild(): 부모에서 포함된 자식 노드를 제거
+        });
     }
 });
