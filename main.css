@@ -1,6 +1,7 @@
 :root {
     --dark: #424242;
     --darker: #1b1b1b;
+    --darkest: #111827;
     --gray: #6b7280;
     --light: #eee;
 }
@@ -30,19 +31,18 @@ header h1 {
     margin-bottom: 1rem;
 }
 
-#task-form {
-display: flex;
+#new-task-form {
+    display: flex;
 }
 
-input,
-button {
+input, button {
     appearance: none;
     border: none;
     outline: none;
     background: none;
 }
 
-#task-input {
+#new-task-input {
     flex: 1 1 0%;
     /* flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
     /* flex-grow: 0보다 큰 값이 세팅되면 해당 아이템이 원래의 크기보다 커지며 빈 공간을 매움*/
@@ -56,23 +56,23 @@ button {
     font-size: 1.25rem;
 }
 
-#task-input::placeholder {
+#new-task-input::placeholder {
     color: var(--gray);
 }
 
-#task-submit {
+#new-task-submit {
     color: #fff;
     font-size: 1.25rem;
     font-weight: 700;
     cursor: pointer;
 }
 
-#task-submit:hover {
+#new-task-submit:hover {
     opacity: 0.8;
     /* 투명도 조절 */
 }
 
-#task-submit:active {
+#new-task-submit:active {
     opacity: 0.6;
 }
 
@@ -114,7 +114,7 @@ main {
     display: block;
 }
 
-.complete {
+.completed {
     text-decoration: line-through;
 }
 
@@ -122,12 +122,12 @@ main {
     color: var(--gray);
 }
 
-#task .task .buttons {
+#task .task .actions {
     display: flex;
     margin: 0 -0.5rem;
 }
 
-.task .buttons button {
+.task .actions button {
     cursor: pointer;
     margin: 0 0.5rem;
     font-size: 1.125rem;
@@ -136,22 +136,22 @@ main {
     transition: 0.4s;
 }
 
-.task .buttons button:hover {
+.task .actions button:hover {
     opacity: 0.8;
 }
 
-.task .buttons button:active {
+.task .actions button:active {
     opacity: 0.6;
 }
 
-.task .buttons .edit {
+.task .actions .edit {
     color: #ffcdd2;
 }
 
-.task .buttons .complete {
+.task .actions .complete {
     color: #3f51b5;
 }
 
-.task .buttons .delete {
+.task .actions .delete {
     color: crimson;
 }
