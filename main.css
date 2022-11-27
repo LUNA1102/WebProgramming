@@ -1,0 +1,157 @@
+:root {
+    --dark: #424242;
+    --darker: #1b1b1b;
+    --gray: #6b7280;
+    --light: #eee;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--dark);
+    color: #fff;
+}
+
+header {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#task-form {
+display: flex;
+}
+
+input,
+button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+}
+
+#task-input {
+    flex: 1 1 0%;
+    /* flex-grow: 1; flex-shrink: 1; flex-basis: 0%; */
+    /* flex-grow: 0보다 큰 값이 세팅되면 해당 아이템이 원래의 크기보다 커지며 빈 공간을 매움*/
+    /* flex-shrink: 0보다 큰 값이 세팅되면 flex-basis보다 작아짐*/
+    /* flex-basis: flex 아이템의 기본 크기 설정 */
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 1.25rem;
+}
+
+#task-input::placeholder {
+    color: var(--gray);
+}
+
+#task-submit {
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+#task-submit:hover {
+    opacity: 0.8;
+    /* 투명도 조절 */
+}
+
+#task-submit:active {
+    opacity: 0.6;
+}
+
+main {
+    flex: 1 1 0%;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.task-list {
+    padding: 1rem;
+}
+
+.task-list h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+#tasks .task {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darker);
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+}
+
+#tasks .task .content {
+    flex: 1 1 0%;
+    /* 긴 문자를 쓸 경우 edit 버튼 전까지 나오도록 설정 */
+}
+
+#tasks .task .content .text {
+    color: var(--light);
+    font-size: 1.125rem;
+    width: 100%;
+    display: block;
+}
+
+.complete {
+    text-decoration: line-through;
+}
+
+#tasks .task .content .text:not(:read-only) {
+    color: var(--gray);
+}
+
+#task .task .buttons {
+    display: flex;
+    margin: 0 -0.5rem;
+}
+
+.task .buttons button {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: 0.4s;
+}
+
+.task .buttons button:hover {
+    opacity: 0.8;
+}
+
+.task .buttons button:active {
+    opacity: 0.6;
+}
+
+.task .buttons .edit {
+    color: #ffcdd2;
+}
+
+.task .buttons .complete {
+    color: #3f51b5;
+}
+
+.task .buttons .delete {
+    color: crimson;
+}
