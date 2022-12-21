@@ -63,6 +63,27 @@ form.addEventListener("submit", function (e) {
         // toggle() -> ON/OFF
         });
 
+        task_edit_el.addEventListener("click", function () {
+            if (task_edit_el.innerText.toLowerCase() === "edit") {
+                // edit 버튼이면
+                task_input_el.removeAttribute("readonly");
+                // removeAttribute(): 요소의 속성을 제거
+                // 'readonly' 속성을 제거하여 수정할 수 있게 함
+                task_input_el.focus();
+                // focus(): 해당 요소에 포커스를 부여
+                // 텍스트 창의 경우, 커서를 위치시켜 바로 입력
+                task_actions_el.removeChild(task_complete_el);
+                task_actions_el.removeChild(task_delete_el);
+                task_edit_el.innerText = "Save";
+            } else {
+                task_input_el.setAttribute("readonly", "readonly");
+                // 수정 후 저장하면 다시 readonly 속성을 부여하여 수정 불가
+                task_edit_el.innerText = "Edit";
+                task_actions_el.appendChild(task_complete_el);
+                task_actions_el.appendChild(task_delete_el);
+            }
+        });
+
         task_delete_el.addEventListener("click", function () {
             list_el.removeChild(task_el);
             // removeChild(): 부모에서 포함된 자식 노드를 제거
